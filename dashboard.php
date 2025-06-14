@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'koneksi.php';
+include 'navbar.php';
 if (!isset($_SESSION['username'])) {
     header("Location: proses_login.php");
     exit;
@@ -21,49 +22,6 @@ if (!isset($_SESSION['username'])) {
             margin: 0;
             padding: 0;
         }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            background-color: white;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: black;
-        }
-
-        .nav-buttons a,
-        .nav-buttons span {
-            text-decoration: none;
-            margin-left: 15px;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: 0.3s ease;
-            color: white;
-        }
-
-        .login-btn {
-            color: white;
-            padding: 10px 20px;
-            background-color: #f44336;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-left: 15px;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
 
         .banner {
             text-align: center;
@@ -176,76 +134,7 @@ if (!isset($_SESSION['username'])) {
             background-color: #333;
         }
 
-        .nav-buttons a:hover {
-            background-color: #005e3f;
-        }
 
-        .nav-buttons span {
-            padding: 10px 0;
-        }
-
-        .nav-center {
-            background-color: #00774D;
-            border-radius: 40px;
-            padding: 10px 20px;
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-center a {
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            color: white;
-            transition: background 0.3s ease;
-        }
-
-        .nav-center a.active {
-            background-color: white;
-            color: black;
-        }
-
-        .nav-center a:hover {
-            background-color: #005e3f;
-            color: white;
-        }
-
-        .nav-right a {
-            text-decoration: none;
-            margin-left: 15px;
-            font-weight: bold;
-            color: #1e1e1e;
-            padding: 10px 20px;
-            border-radius: 30px;
-            transition: 0.3s ease;
-        }
-
-        .login-btn,
-        .logout-btn {
-            color: white;
-            padding: 10px 20px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-
-        }
-
-        .logout-btn {
-            background-color: #00774d;
-        }
-
-        .logout-btn:hover {
-            background-color: #00867f;
-        }
-
-        .login-btn {
-            background-color: #00774d;
-        }
-
-        .login-btn:hover {
-            background-color: #005e3f;
-        }
 
         html,
         body {
@@ -269,102 +158,14 @@ if (!isset($_SESSION['username'])) {
             color: white;
         }
 
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 15px 20px;
-            }
 
-            .nav-center {
-                flex-direction: column;
-                width: 100%;
-                gap: 10px;
-                margin-top: 10px;
-            }
-
-            .nav-right {
-                flex-direction: column;
-                align-items: flex-start;
-                width: 100%;
-                margin-top: 10px;
-            }
-
-            .category-icons {
-                flex-wrap: wrap;
-                gap: 20px;
-                justify-content: center;
-            }
-
-            .product-grid {
-                grid-template-columns: 1fr;
-                padding: 10px;
-            }
-
-            .product-card {
-                width: 100%;
-            }
-
-            .banner-img {
-                height: auto;
-            }
-
-            #searchInput {
-                width: 90%;
-                margin-bottom: 10px;
-            }
-
-            #searchBtn {
-                width: 90%;
-            }
-
-            #productModal>div {
-                width: 90%;
-            }
-
-            #confirmModal>div {
-                width: 90%;
-            }
-
-            .wrapper {
-                padding-bottom: 50px;
-                /* agar tidak kepotong tombol modal */
-            }
-        }
     </style>
 </head>
 
 <body>
     <div class="wrapper">
         <div class="content">
-            <!-- Header -->
-            <div class="navbar">
-                <div class="logo">
-                    <img src="logo.png" alt="ApotekQiu Logo" height="50"> <!-- Ganti dengan path logo -->
-                </div>
 
-                <div class="nav-center">
-                    <a href="beranda.php">Beranda</a>
-                    <a href="dashboard.php" class="active">Produk</a>
-                    <a href="artikel.php">Artikel</a>
-                    <a href="blog.php">Tentang</a>
-                </div>
-
-                <div style="display: flex; align-items: center; justify-content: flex-end; padding: 10px 30px;">
-
-
-                    <?php if (isset($_SESSION['username'])): ?>
-                        <a href="keranjang.php" style="margin-right: 20px;">
-                            <img src="img/Keranjang.png" alt="Keranjang"
-                                style="width: 30px; height: 30px; cursor: pointer; margin-left: 50px">
-                        </a>
-                        <a href="logout.php" class="logout-btn">Keluar</a>
-                    <?php else: ?>
-                        <span>Selamat Datang!</span>
-                        <a href="login.php" class="login-btn">Masuk</a>
-                    <?php endif; ?>
-                </div>
-            </div>
 
             <!-- Banner slider -->
             <div class="banner-slider" id="bannerSlider">

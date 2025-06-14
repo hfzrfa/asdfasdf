@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("navbar.php");
 require_once 'koneksi.php';
 ?>
 
@@ -18,76 +19,13 @@ require_once 'koneksi.php';
       color: #222;
     }
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background-color: white;
-    }
-
-    .logo img {
-      height: 50px;
-    }
-
-    .nav-center {
-      background-color: #00774d;
-      border-radius: 40px;
-      padding: 10px 20px;
-      display: flex;
-      gap: 25px;
-    }
-
-    .nav-center a {
-      text-decoration: none;
-      color: white;
-      padding: 10px 20px;
-      font-weight: bold;
-      border-radius: 25px;
-    }
-
-    .nav-center a.active {
-      background-color: white;
-      color: black;
-    }
-
-    .nav-center a:hover {
-      background-color: #005e3f;
-      color: white;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding: 10px 30px;
-    }
-
-    .nav-right a {
-      margin-left: 15px;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 10px 20px;
-      border-radius: 30px;
-      transition: 0.3s;
-      color: #333;
-    }
-
-    .nav-right .login-btn {
-      background-color: #00774d;
-      color: white;
-    }
-
-    .nav-right .login-btn:hover {
-      background-color: #005e3f;
-    }
 
     footer {
       text-align: center;
       padding: 20px;
       background-color: #00774d;
       color: white;
-      margin-top: 80px;
+      
     }
 
     section {
@@ -218,39 +156,12 @@ require_once 'koneksi.php';
       h2 {
         font-size: 22px;
       }
-
-      .navbar {
-        flex-direction: column;
-        gap: 10px;
-        padding: 20px 10px;
-        margin: -20px -10px 30px -10px;
-      }
     }
   </style>
 </head>
 
 <body>
-  <!-- Navbar Start -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="logo.png" alt="ApotekQiu Logo" />
-    </div>
-    <div class="nav-center">
-      <a href="beranda.php">Beranda</a>
-      <a href="dashboard.php">Produk</a>
-      <a href="artikel.php" class="active">Artikel</a>
-      <a href="blog.php">Tentang</a>
-    </div>
-    <div class="nav-right">
-      <?php if (isset($_SESSION['username'])): ?>
-        <span>Hai, <?= htmlspecialchars($_SESSION['username']); ?></span>
-        <a href="logout.php" class="login-btn">Keluar</a>
-      <?php else: ?>
-        <span>Selamat Datang!</span>
-        <a href="login.php" class="login-btn">Masuk</a>
-      <?php endif; ?>
-  </nav>
-  <!-- Navbar End -->
+
 
   <section>
 
