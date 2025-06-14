@@ -159,16 +159,11 @@ session_start();
   }
 
   footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
     text-align: center;
     padding: 20px;
     background-color: #00774d;
     color: white;
-    margin-top: 0;
-    z-index: 100;
+    margin-top: 80px;
   }
 </style>
 
